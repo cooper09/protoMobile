@@ -1,0 +1,102 @@
+<link href="css/swipe_style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/swipeview.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function($){
+								console.log("page one loaded...");
+	$("#menu-icon").on("click", function(){
+		$("#nav").slideToggle();
+		$(this).toggleClass("active");
+	});
+
+});
+</script>
+<div id="wrapper">Whoa Doggie!</div>
+
+<script type="text/javascript">
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+
+var	gallery, el, i, page, slides = [
+		{
+			img: 'images/bot1.gif',
+			width: 420,
+			height: 420,
+			desc: 'Welcome, please swipe to explore'
+		},
+		{
+			img: 'images/john.gif',
+			width: 420,
+			height: 472,
+			desc: 'My name is John Smith'
+		},
+		{
+			img: 'images/interaction.gif',
+			width: 420,
+			height: 341,
+			desc: 'I am an interaction designer'
+		},
+		{
+			img: 'images/uk.gif',
+			width: 420,
+			height: 292,
+			desc: 'Based in the UK, but working globally'
+		}
+	];
+
+gallery = new SwipeView('#wrapper', { numberOfPages: slides.length });
+
+console.log("new SwipeView");
+// Load initial data
+for (i=0; i<3; i++) {
+	page = i==0 ? slides.length-1 : i-1;
+	el = document.createElement('img');
+	console.log(" new element: " + el);
+	el.className = 'loading';
+	el.src = slides[page].img;
+	console.log("el.src: " + el.src );
+	el.width = slides[page].width;
+	el.height = slides[page].height;
+	el.onload = function () { this.className = ''; }
+	gallery.masterPages[i].appendChild(el);
+
+	el = document.createElement('span');
+	el.innerHTML = slides[page].desc;
+	gallery.masterPages[i].appendChild(el);
+	document.body.appendChild(el);
+	
+	console.log("gallery className: " + 	gallery.masterPages[i].className);
+	console.log("gallery id: " + 	gallery.masterPages[i].id);
+	console.log("gallery innerText: " + 	gallery.masterPages[i].innerHTML);
+	console.log("gallery nodeName: " + 	gallery.masterPages[i].nodeName);
+	console.log("gallery attributes: " + 	gallery.masterPages[i].attributes);
+	// alert(gallery.masterPages[i].to);
+}
+
+gallery.onFlip(function () {
+	var el, upcoming, i;
+
+	for (i=0; i<3; i++) {
+		upcoming = gallery.masterPages[i].dataset.upcomingPageIndex;
+
+		if (upcoming != gallery.masterPages[i].dataset.pageIndex) {
+			el = gallery.masterPages[i].querySelector('img');
+			el.className = 'loading';
+			el.src = slides[upcoming].img;
+			el.width = slides[upcoming].width;
+			el.height = slides[upcoming].height;
+			
+			el = gallery.masterPages[i].querySelector('span');
+			el.innerHTML = slides[upcoming].desc;
+		}
+	}
+});
+
+gallery.onMoveOut(function () {
+	gallery.masterPages[gallery.currentMasterPage].className = gallery.masterPages[gallery.currentMasterPage].className.replace(/(^|\s)swipeview-active(\s|$)/, '');
+});
+
+gallery.onMoveIn(function () {
+	var className = gallery.masterPages[gallery.currentMasterPage].className;
+	/(^|\s)swipeview-active(\s|$)/.test(className) || (gallery.masterPages[gallery.currentMasterPage].className = !className ? 'swipeview-active' : className + ' swipeview-active');
+});
+
+</script>
