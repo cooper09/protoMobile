@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 	
     	<meta charset="utf-8" />
 		<meta name='HandheldFriendly' content='True' />
@@ -15,3 +16,60 @@
         
         
 	<div>
+=======
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>WebGL Example</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="three.js"></script>
+<script type="text/javascript">
+	
+	var camera, scene, renderer, cube, material, mesh;
+	
+	function init() {
+		scene = new THREE.Scene();
+		
+		console.log("Scene: " + scene );
+		
+		camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight,1,10000 );
+		 console.log("Camera: "+ camera );
+		camera.position.z = 1000;
+		
+		scene.add(camera);
+		
+		cube = new THREE.CubeGeometry(300,300,300);
+		material = new THREE.MeshBasicMaterial({color:0x0000FF, wireframe:true});
+		mesh = new THREE.Mesh(cube, material);
+		scene.add(mesh);
+		
+		renderer = new THREE.CanvasRenderer();
+		renderer.setSize(window.innerWidth, window.innerHeight);
+		
+		$('h2').append(renderer.domElement);
+		
+		animate();
+	}
+	
+	function animate() {
+		requestAnimationFrame(animate);
+		
+		mesh.rotation.x += 0.02;
+		mesh.rotation.y += 0.02;
+		
+		renderer.render(scene, camera);
+	}
+	
+$(document).ready(function()  {
+ console.log("init");
+	init();
+});
+
+</script>
+
+</head>
+
+
+	<h2>WebGL 3</h2>
+>>>>>>> responsive_animation
