@@ -1,0 +1,164 @@
+@charset "UTF-8";
+/* CSS Document  - Dara Carter Responsive Site */
+
+.toggler { width: 500px; height: 200px; position: relative; }
+		#button { padding: .5em 1em; text-decoration: none; }
+		#effect { width: 240px; height: 135px; padding: 0.4em; position: relative; }
+		#effect2 { background:red; 
+				position:relative;
+				left:600px;
+			}
+		#effect3 { background:pink;
+					position:relative;
+					left:200px;
+					width:240px;
+				}
+		#effect h3 { margin: 0; padding: 0.4em; text-align: center; }
+		.ui-effects-transfer { border: 2px dotted gray; } 
+	
+	#contentTop.contentFrame img {
+		width:100%;
+		height:80%;
+		min-width:1024px;
+		min-height:728px;
+		height:auto;
+	}
+	
+	#contentTop .contentFrame{
+			position:absolute;
+			top:0px;
+			left:0px;
+			display:none;
+			z-index:100
+		}
+		.no-js #contentTop .contentFrame{display:block;position:relative}
+		#contentTop .contentFrame:first-child{
+			position:relative;
+			top:0px;
+			left:0px;
+			display:block;
+			z-index:200
+		}
+		#contentTop .contentFrame img{
+			width:100%;
+			min-width:1024px;
+		}
+
+/*----------- my custom items   --------------*/
+		#title {
+			position:absolute;
+			top:180px;
+			left:50px;
+			z-index:999;
+			font-size:76px;
+			color:#fff000;
+		}
+		
+		.navBtn {
+			background:red;
+			height:80px;
+			width:80px;
+			position:relative;
+			float:roight;
+			left:845px;
+			cursor:pointer;
+		}
+		
+		#nav {
+			height:450px;
+			width:865px;
+			position:absolute;
+				top:500px;
+				left:10px;
+				z-index:999;
+		}
+		
+		#playlist {
+			background:black;
+			height:550px;
+			width:600px;
+			color:white;
+			margin-top:10px;
+			margin-right:20px;
+			opacity:0.5;
+			position:relative;
+			
+		}
+		
+		
+		#welcome {
+			background:black;
+			height:650%;
+			width:450%;
+			color:yellow;
+			margin-left:50%;
+			opacity:0.5;
+			position:relative;
+			font-family:"Trebuchet MS", Arial, Tahoma, sans-serif;
+			font-size:2em;
+			line-height:1.2em;
+			top:-200px;
+		}
+		
+		#viddySection {
+			height:300px;
+			width:600px;
+			position:absolute;
+			top:150px;
+			left:150px;
+			/*background:orange;*/
+			z-index:auto;
+			opacity:1;
+		}
+		
+		.opt1, .opt2, .opt3 {
+			cursor:pointer;	
+			color:#fff000;
+			font-size:36px;
+			margin-top:20px;
+			
+		}
+		
+		.opt1, .opt2, .opt3 ul {
+			list-style-type: none;
+			top:1em;
+		}
+<!-- my various players --->
+	#myplayer1 {
+		background:#b4b4b4;
+		position:absolute;
+			top:750px;
+			left:10px;
+			z-index:999;
+	}
+	#myplayer2 {
+		background:#b4b4b4;	
+		position:relative;
+		position:absolute;
+			top:10px;
+			left:10px;
+			z-index:999;
+	}
+	#myplayer3 {
+		background:yellow;
+		position:relative;
+		width:320px;
+		height:240px;
+	}
+	
+	#story {
+			height:320px;
+			width:640px;
+			position:relative;
+			top:0px;
+			left:400px;
+			background:black;
+			color:#fff000;
+			z-index:auto;
+			font-family:Arial, Helvetica, sans-serif;
+			font-size:18px;
+			padding:10px;
+		}
+
+
+

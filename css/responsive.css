@@ -5,6 +5,14 @@
 		line-height: 1.3em;
 		background:pink;
 	}
+	
+	.contentFrame {
+		background:pink;	
+	}
+	
+	#welcome {
+		background:orange;	
+	}
 }
 
 /** retina display **/
