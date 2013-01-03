@@ -47,7 +47,7 @@
 /*----------- my custom items   --------------*/
 		#title {
 			position:absolute;
-			top:180px;
+			top:10px;
 			left:50px;
 			z-index:999;
 			font-size:76px;
@@ -73,31 +73,18 @@
 				z-index:999;
 		}
 		
-		#playlist {
-			background:black;
-			height:550px;
-			width:600px;
-			color:white;
-			margin-top:10px;
-			margin-right:20px;
-			opacity:0.5;
-			position:relative;
-			
-		}
-		
-		
 		#welcome {
 			background:black;
 			height:650%;
-			width:450%;
+			width:400%;
 			color:yellow;
-			margin-left:50%;
+			margin-left:25%;
 			opacity:0.5;
 			position:relative;
 			font-family:"Trebuchet MS", Arial, Tahoma, sans-serif;
 			font-size:2em;
 			line-height:1.2em;
-			top:-200px;
+			top:-400px;
 		}
 		
 		#viddySection {

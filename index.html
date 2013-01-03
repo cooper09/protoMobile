@@ -35,6 +35,95 @@
 		margin-left:20px;
 		font-size:12px;
 	}
+	
+	/** horizontal landscape for iPad Touch *
+	@media screen and (orientation:landscape) and (max-device-width: 1100px) {
+		#w #pagebody #content {
+		background:pink;
+		}
+	} 
+	/** horizontal landscape for iPhone/iPod Touch *
+	@media screen and (orientation:landscape) and (max-device-width: 480px) {
+	#w #pagebody #content {
+		background:black;
+	}
+
+	#w #pagebody #content p {
+		font-size: 1.0em;
+		line-height: 1.3em;
+	}
+	
+	#welcome {
+		width:320px;
+		margin:0px;
+		top:-300px;
+		font-size:1em;	
+		display:none;
+	}
+	
+	#contentTop.contentFrame img {
+		display:none;	
+	}
+	
+	#title {
+			position:absolute;
+			top:10px;
+			left:10px;
+			font-size:38px;
+		}
+	} */
+	
+	/* for anything smaller than 1024 (adjusted for scrollbars) */
+@media (max-width:1004px) {
+
+	/* kill all fixed width strutural elements */
+	#contentTop.contentFrame img { width: 100%; }
+
+	/* kill the top va.gov nav */
+	#welcome {
+		width:650px;
+	}
+
+}
+	/* for mobile  - landscape */
+@media (max-width:750px) {
+	body {
+	background:black;	
+	}
+	
+	#welcome {
+		margin:0px;
+		width:300%;
+		font-size:1.8em;	
+	}
+	
+	#w #pagebody #content h2 {
+		font-size:1.8em;
+		line-height:1.4em;
+		text-align:left;
+	}
+}
+
+/* for mobile  - portrait and landscape */
+@media (max-width:750px) and (min-width:150px) {	
+	#welcome {
+		width:150%;
+		top:-345px;
+		font-size:1.8em;	
+	}
+	
+	#w #pagebody header#toolbarnav h1 {
+		font-size:1.4em;
+	}
+	
+	#contentTop.contentFrame img {
+		display:none;	
+	}
+	
+	#w #pagebody #content {
+		background:black;
+	}
+}
 	</style>
 </head>
 
